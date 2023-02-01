@@ -16,23 +16,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
 
     <body>
-        <header class="encabezado " >
 
-
-            <nav class="nav">
-                <a class="logo nav-link" href="index.html" >TechShop</a>
-                <ul class="nav-menu">
-                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo6.html">&LeftTriangleBar;</a></li>
-                    <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo2.html">&RightTriangleBar;</a></li>
-                    <li class="nav-menu-item"> <a class="nav-link nav-link nav-menu-link" href ="audios.html">Audios</a></li>
-                    <li class="nav-menu-item"> <a class="nav-link nav-link nav-menu-link" href ="videos.html"> Videos</a></li>
-                    <li class="nav-menu-item"> <a class="nav-link nav-link nav-menu-link" href ="iframe.html">IFrame</a></li>
-                    <li class="nav-menu-item"> <a class="nav-link nav-link nav-menu-link" href ="form.html">Form</a></li>
-                </ul>
-            </nav>    
+        <header class="encabezado">
+            <h1 id="titulo1b" >TechShop</h1>
             <nav>
-
-
+                <a href="ejemplo6.html">Back</a>
+                <a href="index.html">Home</a>
+                <a href="ejemplo2.html">Next</a>
                 <hr>
             </nav>
         </header>
@@ -44,24 +34,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </aside>
 
         <section class="contenido">
-            <h2>Audios</h2>
+            <h2>Formulario</h2>
 
             <article>
                 <header>
-                    <h3 style = "color: red">Musica Celta</h3>
+                    <h3 style = "color: red">Registro</h3>
                 </header>
+                <form action="/cliente/registro.jsp" method="post">
+                    <input type="hidden" name="codigo" value="1">
+                    <fieldset>
+                        <label>Nombre</label>
+                        <input type="text" name="" value="" size="30" />
+                    </fieldset>
 
-                <figure>
-                    <audio controls>
-                        <source src="audios/musica.mp3" type="audio/mpeg">
-                        Your browser does not support the <code>audio</code> tag.
-                    </audio>
-                    <figcaption>Originaria de Irlanda del Norte</figcaption>
-                </figure>
+                    <fieldset>
+                        <label>Clave</label>
+                        <input type="password" name="" value="" size="30" />
+                    </fieldset>
+                    <fieldset>
+                        <label>Direccion</label>
+                        <textarea name="direccion" rows="4" cols="40">
+                        </textarea>
+                    </fieldset>
+                    <fieldset>
+                        <label>Otros datos</label>
+                        <select name="nivel">
+                            <option>Escolar</option>
+                            <option>Secundaria</option>
+                            <option>Universitaria</option>
+                        </select>
+                        <br/>
+                        <label>Deportes </label>
+                        Futbol<input type="checkbox" name="futbol" value="ON" />
+                        Baloncesto<input type="checkbox" name="baloncesto" value="ON" />
+                        Tennis<input type="checkbox" name="tennis" value="ON" />
+                        <label>Visa Americana</label>
+                        Si<input type="radio" name="visa" value="exclusive" />
+                        No<input type="radio" name="visa" value="exclusive" />
+                    </fieldset>
+                    <input type="submit" value="Enviar" >
+
+
+                </form>
+
 
             </article>
 
-            
+
             <p>Este es el sitio web de Techshop</p>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit 
                 pharetra ad lacinia 
