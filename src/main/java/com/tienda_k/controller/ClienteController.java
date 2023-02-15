@@ -4,8 +4,6 @@
  */
 package com.tienda_k.controller;
 
-
-
 import com.tienda_k.domain.Cliente;
 import com.tienda_k.services.ClienteService;
 import java.util.Arrays;
@@ -14,24 +12,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @Slf4j
 
 public class ClienteController {
-    
 
-    @Autowired 
+    @Autowired
     private ClienteService clienteService;
+
     @GetMapping("/")
-    public String inicio(Model model){
-        
+    public String inicio(Model model) {
         var clientes = clienteService.getClientes();
-        
-   
         model.addAttribute("clientes", clientes);
-        return "index";  
-   
+        return "index";
+
     }
-    
+
+    @GetMapping("/cliente/nuevo")
+    public String clienteNuevo(Cliente cliente) {
+        return "modifica_cliente";
+
+    }
+
+    @PostMapping("/cliente/guardar")
+    public String clienteGuardar(Cliente cliente) {
+        clienteService.save(cliente);
+        return "redirect:/";
+    }
+
 }

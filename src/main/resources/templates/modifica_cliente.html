@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <html>
+        <head>
+            <title>TechShop</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+
+            <h2>Datos de Cliente</h2>
+            <hr>
+            <a th:href="@{/}" >Regresar</a>
+            <hr>
+            <form th:action="@{/cliente/guardar}" method="post" th:object="${cliente}">
+                <label>Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}" required="true"/>
+
+
+                <label>Apellidos</label>
+                <input type="text" name="apellidos" th:field="*{apellidos}" required="true"/>
+                <br>
+
+
+                <label>Correo</label>
+                <input type="email" name="correo" th:field="*{correo}" required="true"/>
+                <br>
+
+
+                <label>Telefono</label>
+                <input type="tel" name="telefono" th:field="*{telefono}"/>
+                <br>
+                <hr>
+                <input type="submit" value="Enviar" />
+            </form>
+
+
+        </body>
+    </html>

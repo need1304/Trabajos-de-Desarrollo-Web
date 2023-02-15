@@ -12,7 +12,17 @@ import java.util.List;
  * @author Laboratorios
  */
 public interface ClienteService {
-    
+    //Se obtiene un listado de clientes en un List
     public List<Cliente> getClientes();
     
+    //Se obtiene un Cliente, a partir del id de un cliente
+    
+    public Cliente getCliente(Cliente cliente );
+    
+    //Se inserta un nuevo clientes si el id del cliente esta vacio 
+    //Se actualiza un cliente si el id no esta vacio 
+    public void save(Cliente cliente);
+
+    //Se elimina un cliente si el id no esta vacio 
+    public void delete(Cliente cliente);
 }
