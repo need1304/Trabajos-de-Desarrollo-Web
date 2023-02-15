@@ -42,4 +42,17 @@ public class ClienteController {
         return "redirect:/";
     }
 
+    @GetMapping("/cliente/eliminar/{idCliente}")
+    public String clienteEliminar(Cliente cliente) {
+        clienteService.delete(cliente);
+        return "redirect:/";
+    }
+
+    @GetMapping("/cliente/modificar/{idCliente}")
+    public String clienteModificar(Cliente cliente, Model model) {
+        cliente = clienteService.getCliente(cliente);
+        model.addAttribute("cliente",cliente);
+        return "modifica_cliente";
+    }
+
 }
