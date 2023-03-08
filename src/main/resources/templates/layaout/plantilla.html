@@ -2,22 +2,58 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
     <html>
-        <head>
+        <head th:fragment="head">
             <title>TechShop</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+            <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+            <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
         </head>
         <body>
-            <header th:fragment="header">
-                <h1 style="background-color:black;color:white;text-align:center;">TechShop</h1>
-                <br>
-                <hr>
+            <header th:fragment="header" class="header">
+                <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
+                    <div class="container">
+                        <a th:href="@{/}" class="navbar-brand ">TechShop</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div id="menu" class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="navbar-item px-2">
+                                    <a th:href="@{cliente/listado}" class="nav-menu-link nav-link">Clientes</a>             
+                                </li>
+                                <li class="navbar-item px-2">
+                                    <a th:href="@{Producto/listado}" class="nav-menu-link nav-link">Productos</a>             
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <section id="main-header" class="py-2 bg-success text-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1>
+                                    <i class="fas fa-cog"></i>Su Tienda
+                                </h1>
+                                
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                </section>
+
             </header>
 
-            <footer th:fragment="footer">
-                <p style="background-color:yellow;text-align:center;">&COPY; Todos los derechos reservados 2023</p>
-                <br>
-                <hr>
+            <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
+                <p class="lead text-center">&COPY; Todos los derechos reservados 2023</p>
             </footer>
         </body>
     </html>

@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-    <html>
-        <head>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head th:replace="~{layaout/plantilla :: head}">
             <title>TechShop</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
         <body>
-            <header th:replace="layaout/plantilla :: header" />
-
-
+            <header th:replace="~{layaout/plantilla :: header}" />
 
             <h2>Listado de clientes</h2>
             <hr>
@@ -43,6 +41,6 @@
             <div th:if="${clientes == null or clientes.empty}">
                 <h2>No tenemos clientes que mostrar</h2>
             </div>
-            <footer th:replace="layaout/plantilla :: footer" />
+            <footer th:replace="~{layaout/plantilla :: footer}" />
         </body>
     </html>

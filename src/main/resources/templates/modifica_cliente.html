@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-    <html>
-        <head>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head th:replace="~{layaout/plantilla :: head}"> 
             <title>TechShop</title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         </head>
         <body>
-            <header th:replace="layaout/plantilla :: header"></header>
+            <header th:replace="~{layaout/plantilla :: header}"></header>
             <h2>Datos de Cliente</h2>
             <hr>
             <a th:href="@{/}" >Regresar</a>
@@ -32,6 +32,6 @@
                 <hr>
                 <input type="submit" value="Enviar" />
             </form>
-            <footer th:replace="layaout/plantilla :: footer"></footer>
+            <footer th:replace="~{layaout/plantilla :: footer}"></footer>
         </body>
     </html>
