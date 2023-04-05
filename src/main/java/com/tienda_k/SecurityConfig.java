@@ -1,5 +1,7 @@
 package com.tienda_k;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,8 +15,8 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
     
-   @Bean
-    public UserDetailsService users() {
+   /*@Bean
+   public UserDetailsService users() {
         UserDetails admin = User.builder()
                 .username("juan")
                 .password("{noop}123")
@@ -32,6 +34,13 @@ public class SecurityConfig {
                 .build();
         
         return new InMemoryUserDetailsManager(user,sales, admin);
+    }*/
+   @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
+        build.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
     }
     
     @Bean
